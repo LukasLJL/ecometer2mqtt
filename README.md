@@ -1,0 +1,10 @@
+# Ecometer2MQTT
+
+## Environment Variables
+- SERIAL_PORT
+- TANK_HEIGHT
+- TANK_OFFSET
+- MQTT_BROKER
+- MQTT_PORT
+- MQTT_USER
+- MQTT_PASSWORD
