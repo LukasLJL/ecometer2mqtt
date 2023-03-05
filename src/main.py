@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from src.ecometer import Ecometer
-from src.mqtt import myMQTT
+from ecometer import Ecometer
+from mqtt import myMQTT
 
 
 def main():

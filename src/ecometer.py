@@ -6,7 +6,7 @@ import threading
 
 import serial
 
-from src.mqtt import myMQTT
+from mqtt import myMQTT
 
 ECOMETER_SERIAL_PORT = os.environ['SERIAL_PORT']
 HEIGHT = os.environ['TANK_HEIGHT']
