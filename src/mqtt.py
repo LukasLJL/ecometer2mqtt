@@ -95,6 +95,12 @@ class myMQTT():
         topic = "ecometer2mqtt/state"
         self.client.publish(topic, json.dumps(payload))
 
+    def pushStart(self):
+        topic = "ecometer2mqtt/info"
+        self.client.publish(topic, json.dumps({
+            "msg": "Starting ecometer2mqtt",
+        }))
+
     def __init__(self):
         client = mqtt.Client("ecometer2mqtt-python")
         client.username_pw_set(os.environ['MQTT_USER'], os.environ['MQTT_PASSWORD'])

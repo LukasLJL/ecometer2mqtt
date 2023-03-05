@@ -5,7 +5,9 @@ from mqtt import myMQTT
 
 
 def main():
-    print("Hello World")
+    print("Starting ecometer2mqtt....")
+    mqtt = myMQTT()
+    mqtt.pushStart()
 
     my_ecometer = Ecometer()
     my_ecometer.start()
