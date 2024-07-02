@@ -1,0 +1,11 @@
+ecometer:
+  usb_port: /dev/ttyUSB0
+  baud: 115200
+  height: 145
+  offset: 21
+mqtt:
+  host: myMqttBroker.local
+  port: 1883
+  user: mqtt-user
+  password: mqtt-password
+  stateTopic: ecometer2mqtt/state

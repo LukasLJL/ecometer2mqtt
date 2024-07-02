@@ -1,11 +1,12 @@
-FROM python:3.10-alpine
+FROM golang:1.22-alpine AS builder
+WORKDIR /src
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o ecometer2mqtt
 
-WORKDIR /ecometer2mqtt
-COPY ./src/main.py .
-COPY ./src/ecometer.py .
-COPY ./src/mqtt.py .
-COPY ./src/requirements.txt .
-
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-ENTRYPOINT [ "python3", "main.py"]
+FROM alpine:3.19
+WORKDIR /app
+COPY --from=builder /src/ecometer2mqtt /app/ecometer2mqtt
+COPY config-example.yaml /app/config.yaml
+ENTRYPOINT ["/app/ecometer2mqtt"]
