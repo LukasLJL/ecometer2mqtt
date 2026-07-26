@@ -1,10 +1,10 @@
 module github.com/lukasljl/ecometer2mqtt
 
-go 1.25
+go 1.26
 
 require (
 	github.com/eclipse/paho.mqtt.golang v1.5.1
-	github.com/sirupsen/logrus v1.9.3
+	github.com/sirupsen/logrus v1.9.4
 	github.com/spf13/viper v1.21.0
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 )
